@@ -22,7 +22,7 @@ Route::prefix('v1')->group(function () {
 
 Route::resource('fabricantes','FabricanteController',['except'=>['edit','create'] ]);
 
-Route::resource('aviones','AvionController',[ 'only'=>['index','show'] ]);
+Route::resource('aviones','AvionController',['except'=>['edit','create'] ]);
 
 Route::resource('fabricantes.aviones','FabricanteAvionController',[ 'except'=>['show','edit','create'] ]);
 
