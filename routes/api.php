@@ -18,8 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::prefix('v1')->group(function () {
+
 Route::resource('fabricantes','FabricanteController',['except'=>['edit','create'] ]);
 
 Route::resource('aviones','AvionController',[ 'only'=>['index','show'] ]);
 
 Route::resource('fabricantes.aviones','FabricanteAvionController',[ 'except'=>['show','edit','create'] ]);
+
+});
