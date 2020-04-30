@@ -20,14 +20,10 @@ class FabricanteAvionController extends Controller {
 	// pero solamente para los métodos de crear, actualizar y borrar.
 	public function __construct()
 	{
-		//$this->middleware('auth.basic',['only'=>['store','update','destroy']]);
+		$this->middleware('auth.basic',['only'=>['store','update','destroy']]);
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	
 	public function index($idFabricante)
 	{
 		// Devolverá todos los aviones.
@@ -112,7 +108,6 @@ class FabricanteAvionController extends Controller {
 	 */
 	public function show($idFabricante,$idAvion)
 	{
-		//
 		return "Se muestra avión $idAvion del fabricante $idFabricante";
 	}
 

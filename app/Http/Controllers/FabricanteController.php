@@ -16,11 +16,11 @@ use Response;
 
 class FabricanteController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	public function __construct()
+	{
+		$this->middleware('auth.basic',['only'=>['store','update','destroy']]);
+	}
+	
         public function index()
         {
             // Devuelve todos los fabricantes en JSON.
